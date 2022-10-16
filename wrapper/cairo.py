@@ -24,7 +24,7 @@ def compileCairo(src, output):
 
 
 def runCairo(cairoProg, inputFile, traceFile, memoryFile):
-    program = f"cairo-run --program={cairoProg} --layout=all --print_output --program_input={inputFile} --memory_file={memoryFile} --trace_file={traceFile} --cairo_pie_output={cairoProg.replace('.json','') + '.pie'}".split(
+    program = f"cairo-run --program={cairoProg} --layout=all --print_output --program_input={inputFile} --memory_file={memoryFile} --trace_file={traceFile}".split(
         " "
     )
     proc = subprocess.run(program, stdout=subprocess.PIPE)

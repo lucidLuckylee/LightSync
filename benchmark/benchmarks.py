@@ -23,10 +23,10 @@ class Ctx:
 smallBatches = [(1, 3), (2015, 2017)]
 mediumBatches = [(1, 21), (2015, 2035)]
 largeBatches = [(1, 252), (2015, 2266)]
-
+hugeBatches = [(1, 1008), (2015, 3022), (1, 2016), (2015, 4030), (1, 4032)]
 # list of lists of batches - the bigger the batch the farther at the end of the list
 # one can decide to only run the first x batches
-batches = [smallBatches, mediumBatches, largeBatches]
+batches = [smallBatches, mediumBatches, largeBatches, hugeBatches]
 
 results = []
 resTable = PrettyTable()

@@ -1,6 +1,7 @@
-# adopted from https://github.com/informartin/zkRelay/blob/master/preprocessing/create_input.py
+# adopted from
+# https://github.com/informartin/zkRelay/blob/master/preprocessing/create_input.py
 
-from bitcoinrpc.authproxy import AuthServiceProxy
+from blockstream import blockexplorer
 
 
 def getBitcoinClientURL(ctx):
@@ -8,24 +9,21 @@ def getBitcoinClientURL(ctx):
 
 
 def checkClientRunning(ctx):
-    rpc_connection = AuthServiceProxy(getBitcoinClientURL(ctx))
-    commands = [["getblockcount"]]
-    try:
-        _ = rpc_connection.batch_(commands)
-    except:
-        return False
     return True
 
 
-def getBlockHashesInRange(ctx, i, j):
-    rpc_connection = AuthServiceProxy(getBitcoinClientURL(ctx))
-    commands = [["getblockhash", height] for height in range(i, j)]
-    block_hashes = rpc_connection.batch_(commands)
-    return block_hashes
-
-
 def getBlockHeadersInRange(ctx, i, j):
-    block_hashes = getBlockHashesInRange(ctx, i, j)
-    rpc_connection = AuthServiceProxy(getBitcoinClientURL(ctx))
-    blocks = rpc_connection.batch_([["getblockheader", h] for h in block_hashes])
-    return blocks
+    blocks = []
+    for x in range(i, j):
+        blocks.append(blockexplorer.get_block_by_height(x))
+    block_dicts = [
+        {
+            "versionHex": f"{x.version:08x}",
+            "previousblockhash": x.previous_block_hash,
+            "height": x.height,
+            "merkleroot": x.merkle_root,
+            "time": x.timestamp,
+            "nonce": x.nonce,
+            "bits": f"{x.bits:x}",
+        } for x in blocks]
+    return block_dicts
