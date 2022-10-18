@@ -2,10 +2,10 @@
 LightSync is the light client version of [ZeroSync](https://github.com/zerosync/zerosync/) that validates batches of Bitoin block headers and attests to their correct validation using a STARK proof. This allows anyone to simply verify the proof and use the resulting header chain as if they validated the blocks themselves.
 
 The Proof confirms the correct execution of:
-	- a header chain structure (every encoded previous block is the actual previous block)
-	- Proof of Work validation (every block hash is below target)
-	- correct retargeting (the target is correctly calculated from the epoch timestamps)
-	- WHEN APPLICABLE the validation of each block's minimum timestamp ([median of previous eleven blocks](https://en.bitcoin.it/wiki/Block_timestamp))
+- a header chain structure (every encoded previous block is the actual previous block)
+- Proof of Work validation (every block hash is below target)
+- correct retargeting (the target is correctly calculated from the epoch timestamps)
+- WHEN APPLICABLE the validation of each block's minimum timestamp ([median of previous eleven blocks](https://en.bitcoin.it/wiki/Block_timestamp))
 
 Additionally the program output contains a Merkle root (from a Merkle tree over all block headers in the batch) that can be used to proof inclusion of block headers in the batch at a later point (e.g. for SPV).
 
