@@ -1,4 +1,9 @@
+#** deprecated branch **
+
+Might be useful if you want to use a locally running btc-client
+
 # starkRelay
+
 
 StarkRelay is a Relay that submits the latest block header in a batch of Bitcoin block headers to an Ethereum Smart Contract. The block headers are validated off-chain and the validation process includes calculating the block hash, checking the block's minimum time stamp as explained in the [wiki](https://en.bitcoin.it/wiki/Block_timestamp) and the correct target. In case a batch exceeds an epoch the target is recalculated for the first block of the next epoch using its previous block and the first block of the current epoch. All of this is implemented in Cairo, so its possible to create a verifiable STARK-proof attesting the correctness of the validation process. 
 
