@@ -9,7 +9,10 @@ The Proof confirms the correct execution of:
 
 Additionally the program output contains a Merkle root (from a Merkle tree over all block headers in the batch) that can be used to proof inclusion of block headers in the batch at a later point (e.g. for SPV).
 
-To verify a proof you can use the respective verifier of SHARP or giza. There currently is a solidity contract in this repository to give you an idea of what has to be verified to create a correct header chain consisting of multiple batches. TODO: List/document verification constraints here. 
+To verify a proof you can use the respective verifier of SHARP or giza. There currently is a solidity contract in this repository to give you an idea of what has to be verified to create a correct header chain consisting of multiple batches.
+
+TODO: List/document verification constraints here. 
+
 **All of this is experimental research code and CONTAINS CRITICAL SECURITY BUGS!**
 
 ## Requirements
