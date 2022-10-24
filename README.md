@@ -1,7 +1,7 @@
 # LightSync
 LightSync is the light client version of [ZeroSync](https://github.com/zerosync/zerosync/) that validates batches of Bitoin block headers and attests to their correct validation using a STARK proof. This allows anyone to simply verify the proof and use the resulting header chain as if they validated the blocks themselves.
 
-The Proof confirms the correct execution of:
+The proof confirms the correct execution of:
 - A header chain structure (every encoded previous block is the actual previous block)
 - Proof of Work validation (every block hash is below the encoded target)
 - Correct retargeting (the target is correctly calculated from the epoch timestamps)
