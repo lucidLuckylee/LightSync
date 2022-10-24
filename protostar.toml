@@ -8,3 +8,4 @@ libs_path = "lib"
 main = [
     "src/main.cairo",
 ]
+
