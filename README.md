@@ -12,12 +12,12 @@ Additionally the program output contains a Merkle root (from a Merkle tree over 
 
 **All of this is experimental research code and CONTAINS CRITICAL SECURITY BUGS!**
 
-## Current State
-See `src/chain_proof/main.py` for an example of how to call the program and receive a computation trace that can then be proven using e.g. giza.
+## Current Status
+See `src/chain_proof/main.py` for an example on how to call the program and receive a computation trace that can then be proven using e.g. [giza](https://github.com/maxgillett/giza).
 
 Essentially creating a chain of batches only requires checking the input and output state of each batch validation run to be equal. Further, the batch size should be verified against the current block height.
 
-There is no recursive verifier added yet, however If you have access to StarkWare's proving systems you can add their recursive verifier and create a cairo program that verifies the LightSync `main.cairo` execution as stated above.
+There is no recursive verifier added yet, however, if you have access to StarkWare's proving systems you can add their recursive verifier and create a cairo program that verifies the LightSync `main.cairo` execution as stated above.
 
 ## Requirements
 
