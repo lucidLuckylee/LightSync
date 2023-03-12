@@ -1,3 +1,6 @@
+# DEPRECATED
+The latest light version is currently integrated in ZeroSync itself
+
 # LightSync
 LightSync is the light client version of [ZeroSync](https://github.com/zerosync/zerosync/) that validates batches of Bitoin block headers and attests to their correct validation using a STARK proof. This allows anyone to simply verify the proof and use the resulting header chain as if they validated the blocks themselves.
 
